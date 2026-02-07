@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-dpl
 spec:
+  replicas: 4 
   selector:
     matchLabels:
       app: nginx-dpl
@@ -13,6 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx-dpl
-        image: nginx:latest 
+        #image: nginx:latest 
+        image: 69966/earthdx:78
         ports:
         - containerPort: 80
