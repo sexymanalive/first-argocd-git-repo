@@ -10,7 +10,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "27f999c8"
+  tag: "d82ab0b0"
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
 # This is to override the chart name.
@@ -97,14 +97,13 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 # Additional volumes on the output Deployment definition.
-volumes: 
-  - name: my-spring-vol 
-    persistentVolumeClaim: 
+volumes:
+  - name: my-spring-vol
+    persistentVolumeClaim:
       claimName: spring-nfs-pvc-external
 volumeMounts:
-  - name: my-spring-vol 
+  - name: my-spring-vol
     mountPath: /app/filestorage/images
-
 nodeSelector: {}
 tolerations: []
 affinity: {}
